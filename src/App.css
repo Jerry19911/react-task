@@ -264,6 +264,7 @@ header .container{
     gap: 2rem;
     align-items: center;
     line-height: 5;
+    margin-left: -40px;
 }
 
 
@@ -1366,4 +1367,243 @@ footer{
        .socials{
         margin-top: 2rem;
        }
+}
+
+.dark-mode h1, 
+.dark-mode h2, 
+.dark-mode h3, 
+.dark-mode h4, 
+.dark-mode h5, 
+.dark-mode h6, 
+.dark-mode p, 
+.dark-mode span {
+    color: var(--color-white) !important;
+}
+
+
+
+body.dark-mode {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+
+.dark-mode header,
+.dark-mode nav {
+    background-color: var(--color-dark);
+}
+
+.dark-mode .navbar a {
+    color: var(--color-white);
+}
+
+
+.dark-mode #hero {
+    background-color: var(--color-dark);   
+    
+}
+
+body.dark-mode #hero .images img {
+    z-index: 0;
+    position: absolute;
+    width: auto;
+    height: auto;
+}
+
+body.dark-mode #hero .img-back {
+    bottom: -1px;
+    right: 230px;
+    z-index: -10;
+}
+
+body.dark-mode #hero .img-front {
+    bottom: 0;
+    right: 0;
+    z-index: -5;
+}
+
+.dark-mode #hero h1, 
+.dark-mode #hero p {
+    color: var(--color-white);
+}
+
+
+.dark-mode .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.dark-mode .btn-download-app {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+}
+
+
+.dark-mode .icon-wrapper {
+    background-color: var(--color-gray700) !important;  
+}
+
+
+.dark-mode #brands,
+.dark-mode #page2, 
+.dark-mode #page3, 
+.dark-mode #page4, 
+.dark-mode #page5, 
+.dark-mode #page6 {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+body.dark-mode #page4 .images img {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    z-index: 10; 
+    position: relative;
+}
+
+body.dark-mode #page4 {
+    position: relative;
+    z-index: 1;
+}
+
+body.dark-mode #page4 .images img {
+    position: relative;
+    z-index: 100;
+}
+
+.dark-mode .faq-section {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+.dark-mode .faq-section .question {
+    color: var(--color-white);
+}
+
+.dark-mode .faq-section .answer {
+    background-color: var(--color-gray800);
+    color: var(--color-white);
+}
+
+
+.dark-mode footer {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+
+.dark-mode a {
+    color: var(--color-primary);
+}
+
+.dark-mode a:hover {
+    color: var(--color-white);
+    text-decoration: underline;
+}
+
+
+.dark-mode .cards {
+    background-color: var(--color-gray800);
+    box-shadow: none;
+}
+
+
+
+
+
+#page2{
+    body.dark-mode .images {
+    display: block !important;
+    position: relative !important;
+
+    body.dark-mode .images img {
+        display: block !important;
+        filter: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        z-index: 1 !important;
+    }
+}    
+
+}
+
+
+body.dark-mode .btn-download-app{
+    background-color: var(--color-gray500);
+}
+
+
+body.dark-mode #page5 {
+    background-color: var(--color-gray800) !important; 
+    
+}
+
+body.dark-mode #page5 .cards{
+    background-color: var(--color-gray800) !important; 
+
+}
+
+
+body.dark-mode #page5 {
+    background-color: var(--color-dark) !important; 
+    
+}
+
+body.dark-mode #page6 .box{
+    background-color: var(--color-dark) !important; 
+    border-color: var(--color-gray700);
+
+}
+
+body.dark-mode #page6 .chevron, .answer{
+    background-color: var(--color-dark) !important;
+    border-color: var(--color-gray700);
+
+}
+
+body.dark-mode #page6 .contentbottom{
+    background-color: var(--color-gray800);
+
+}
+
+body.dark-mode #page7 {
+    background-color: var(--color-dark) !important; 
+    
+}
+
+body.dark-mode #page7 .iconcircle{
+    background-color: var(--color-gray700);
+}
+
+body.dark-mode #page7 .card {
+    background-color: var(--color-gray700);
+    color: var(--color-white);
+}
+
+body.dark-mode #page7 .card input, 
+body.dark-mode #page7 .card select, 
+body.dark-mode #page7 .card textarea {
+    background-color: var(--color-gray600);
+    color: var(--color-white);
+    border: 1px solid var(--color-gray500);
+}
+
+
+body.dark-mode #page7 .card button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+
+body.dark-mode #page7 .card input::placeholder, 
+body.dark-mode #page7 .card textarea::placeholder {
+    color: var(--color-gray300);
+}
+
+body.dark-mode #page7 .card label, 
+body.dark-mode #page7 .card input, 
+body.dark-mode #page7 .card select, 
+body.dark-mode #page7 .card textarea {
+    color: var(--color-white);
 }

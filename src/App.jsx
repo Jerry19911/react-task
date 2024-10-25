@@ -23,6 +23,7 @@ function App() {
         <Features2 />
         <Test />
         <Faq />
+        <Navbar />
         <Contacts />
         <Maps />
         <Footer />

@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+
+  };
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+
+    } else {
+      document.body.classList.remove('dark-mode');
+
+    }
+  }, [darkMode]);
+
   return (
-<header>
+    <header>
       <div className="container">
-        <a href="indext.html">
-          <img src="images/siliconlogo1.svg" alt="Silicon Logotype" />
+        <a href="index.html">
+          <img src="images/Siliconlogotop.svg" alt="Silicon Logotype" />          
         </a>
 
         <nav id="main-menu" className="navbar">
+        <a className="nav-link" href="#">Silicon</a>
           <a className="nav-link" href="#">Features</a>
           <a className="nav-link" href="#">Contact</a>
         </nav>
@@ -16,7 +34,12 @@ const Navbar = () => {
         <div id="darkmode-toggle-switch" className="btn-toggle-switch">
           <span className="label">Dark Mode</span>
           <label htmlFor="darkmode-switch" className="toggle-switch">
-            <input id="darkmode-switch" type="checkbox" />
+            <input 
+              id="darkmode-switch" 
+              type="checkbox" 
+              checked={darkMode} 
+              onChange={toggleDarkMode} 
+            />
             <span className="slider round"></span>
           </label>
         </div>
