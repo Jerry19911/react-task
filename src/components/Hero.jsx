@@ -11,10 +11,18 @@ const Hero = () => {
           <p>We offer you a new generation of the mobile banking. Save, spend & manage money in your pocket.</p>
           <div className="buttons">
             <a className="btn-download-app" href="#">
-              <img src="images/app-store.svg" alt="App store" />
+              <img src="images/app-store2.svg" alt="App store" />
+              <div className="btn-text">
+                <span className="small-text">Download on the</span>
+                <span className="large-text">App Store</span>
+              </div>
             </a>
             <a className="btn-download-app" href="#">
-              <img src="images/google-play.svg" alt="Google play" />
+              <img src="images/google-play2.svg" alt="Google play" />
+              <div className="btn-text">
+                <span className="small-text">Get it on</span>
+                <span className="large-text">Google Play</span>
+              </div>
             </a>
           </div>
 

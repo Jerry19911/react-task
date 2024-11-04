@@ -1,47 +1,66 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const Test = () => {
+const CustomerFeedback = () => {
+  const [feedbackList, updateFeedbackList] = useState([]);
+  const [fetchError, setFetchError] = useState(null);
+
+  useEffect(() => {
+    const getCustomerFeedback = async () => {
+      try {
+        const response = await fetch('https://win24-assignment.azurewebsites.net/api/testimonials', {
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          }
+        });
+        if (!response.ok) {
+          throw new Error(`Failed to load data: ${response.status}`);
+        }
+        const data = await response.json();
+        updateFeedbackList(data);
+      } catch {
+        setFetchError('Something went wrong, please try again.');
+      }
+    };
+    getCustomerFeedback();
+  }, []);
+
   return (
     <section id="page5">
       <div className="container">
         <h1 className="headline">Clients are<br />Loving Our App</h1>
-
-        <div className="cards">
-          <div className="qoute">
-            <p className="qoutecontent">“</p>
-          </div>
-          <div className="rating">★★★★☆</div>
-          <p className="text">
-            Sit pretium aliquam tempor, orci dolor sed maecenas rutrum sagittis. Laoreet posuere rhoncus, egestas lacus, egestas justo aliquam vel. Nisi vitae lectus hac hendrerit. Montes justo turpis sit amet.
-          </p>
-          <div className="profile">
-            <img className="picture" src="images/sida5/Fannie.svg" alt="Fannie Summers profile avatar." />
-            <div className="profile-info">
-              <p className="name">Fannie Summers</p>
-              <p className="title">Designer</p>
+        
+        {fetchError && <div className="error-message">{fetchError}</div>}
+        
+        {feedbackList.length > 0 ? (
+          feedbackList.map((feedback) => (
+            <div className="cards" key={feedback.id}>
+              <div className="quote">
+                <p className="quotecontent">“</p>
+              </div>
+              <div className="rating">
+                {'★'.repeat(feedback.starRating) + '☆'.repeat(5 - feedback.starRating)}
+              </div>
+              <p className="text">{feedback.comment}</p>
+              <div className="profile">
+                <img
+                  className="picture"
+                  src={feedback.avatarUrl}
+                  alt={`Profile picture of ${feedback.author}`}
+                />
+                <div className="profile-info">
+                  <p className="name">{feedback.author}</p>
+                  <p className="title">{feedback.jobRole}</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div className="cards">
-          <div className="qoute">
-            <p className="qoutecontent">“</p>
-          </div>
-          <div className="rating">★★★★★</div>
-          <p className="text">
-            Nunc senectus leo vel venenatis accumsan vestibulum sollicitudin amet porttitor. Nisl bibendum nulla tincidunt eu enim ornare dictumst sit amet. Dictum pretium dolor tincidunt egestas eget nunc.
-          </p>
-          <div className="profile">
-            <img className="picture" src="images/sida5/Albert.svg" alt="Albert Flores profile avatar." />
-            <div className="profile-info">
-              <p className="name">Albert Flores</p>
-              <p className="title">Developer</p>
-            </div>
-          </div>
-        </div>
+          ))
+        ) : (
+          !fetchError && <p>No testimonials available at the moment.</p>
+        )}
       </div>
     </section>
   );
 };
 
-export default Test;
+export default CustomerFeedback;

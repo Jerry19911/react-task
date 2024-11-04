@@ -1,6 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const Faq = () => {
+const FaqSection = () => {
+  const [faqItems, updateFaqItems] = useState([]);
+  const [activeItem, setActiveItem] = useState(null);
+  const [fetchError, setFetchError] = useState(null);
+
+  useEffect(() => {
+    const getFaqItems = async () => {
+      try {
+        const response = await fetch('https://win24-assignment.azurewebsites.net/api/faq');
+        if (!response.ok) throw new Error('Something went wrong, plaese try again.');
+        const data = await response.json();
+        updateFaqItems(data);
+      } catch (error) {
+        setFetchError(error.message);
+      }
+    };
+    getFaqItems();
+  }, []);
+
+  const toggleItem = (id) => {
+    setActiveItem(activeItem === id ? null : id);
+  };
+
   return (
     <section id="page6">
       <div className="container">
@@ -30,51 +52,23 @@ const Faq = () => {
         </div>
 
         <div className="right-content">
-          <ul>
-            <li className="chevron">
-              <span className="Faqheadline">Is any of my personal information stored in the App?</span>
-              <span className="btn-chevron">
-                <i className="fa-regular fa-chevron-down"></i>
-              </span>
-            </li>
-
-            <li className="chevron">
-              <div className="answer">
-                <span className="Faqheadline">What formats can I download my transaction history in?</span>
-                <p className="faqanswer">Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit.</p>
-              </div>
-              <span className="btn-chevronup">
-                <i className="fa-regular fa-chevron-up"></i>
-              </span>
-            </li>
-
-            <li className="chevron">
-              <span className="Faqheadline">Can I schedule future transfers?</span>
-              <span className="btn-chevron">
-                <i className="fa-regular fa-chevron-down"></i>
-              </span>
-            </li>
-
-            <li className="chevron">
-              <span className="Faqheadline">When can I use Banking App services?</span>
-              <span className="btn-chevron">
-                <i className="fa-regular fa-chevron-down"></i>
-              </span>
-            </li>
-
-            <li className="chevron">
-              <span className="Faqheadline">Can I create my own password that is easy for me to remember?</span>
-              <span className="btn-chevron">
-                <i className="fa-regular fa-chevron-down"></i>
-              </span>
-            </li>
-
-            <li className="chevron">
-              <span className="Faqheadline">What happens if I forget or lose my password?</span>
-              <span className="btn-chevron">
-                <i className="fa-regular fa-chevron-down"></i>
-              </span>
-            </li>
+          {fetchError && <p className="error-message">{fetchError}</p>}
+          <ul className="faq-list">
+            {faqItems.map((item) => (
+              <li key={item.id} className="chevron" onClick={() => toggleItem(item.id)}>
+                <div className="chevron-header">
+                  <span className="Faqheadline">{item.title}</span>
+                  <span className="btn-chevron">
+                    <i className={`fa-regular ${activeItem === item.id ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
+                  </span>
+                </div>
+                {activeItem === item.id && (
+                  <div className="answer">
+                    <p className="faqanswer">{item.content}</p>
+                  </div>
+                )}
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -101,4 +95,4 @@ const Faq = () => {
   );
 };
 
-export default Faq;
+export default FaqSection;
