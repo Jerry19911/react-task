@@ -109,6 +109,12 @@ h5{
     
 }
 
+.error {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 4px;
+  }
+  
 
 a{
     color: var(--color-primary);
@@ -1095,7 +1101,8 @@ min-height: 540px;
         padding-left: 2rem;
         padding-top: 3rem;
     }
-
+    
+    
     .bellicon{
         font-size: 58px; 
         width: 65px; 
@@ -1409,113 +1416,114 @@ footer{
        }
 }
 
-body.dark-mode h1, 
-body.dark-mode h2, 
-body.dark-mode h3, 
-body.dark-mode h4, 
-body.dark-mode h5, 
-body.dark-mode h6, 
-body.dark-mode p, 
-body.dark-mode span {
+.dark h1, 
+.dark h2, 
+.dark h3, 
+.dark h4, 
+.dark h5, 
+.dark h6, 
+.dark p, 
+.dark span {
     color: var(--color-white) !important;
 }
 
-body.dark-mode {
+.dark {
     background-color: var(--color-dark);
     color: var(--color-white);
 }
 
-body.dark-mode header,
-body.dark-mode nav {
+
+.dark header,
+.dark nav {
     background-color: var(--color-dark);
 }
 
-body.dark-mode .navbar a {
+.dark .navbar a {
     color: var(--color-white);
 }
 
-body.dark-mode #hero {
+.dark #hero {
     background-color: var(--color-dark);   
 }
 
-body.dark-mode #hero .images img {
+.dark #hero .images img {
     z-index: 0;
     position: absolute;
     width: auto;
     height: auto;
 }
 
-body.dark-mode #hero .img-back {
+.dark #hero .img-back {
     bottom: -1px;
     right: 230px;
     z-index: -10;
 }
 
-body.dark-mode #hero .img-front {
+.dark #hero .img-front {
     bottom: 0;
     right: 0;
     z-index: -5;
 }
 
-body.dark-mode #hero h1, 
-body.dark-mode #hero p {
+.dark #hero h1, 
+.dark #hero p {
     color: var(--color-white);
 }
 
-body.dark-mode .btn-primary {
+.dark .btn-primary {
     background-color: var(--color-primary);
     color: var(--color-white);
 }
 
-body.dark-mode .btn-primary:hover{
+.dark .btn-primary:hover{
     background-color: var(--color-gray600);
     color: var(--color-white);
     text-decoration: none;
 }
 
-body.dark-mode .btn-download-app {
+.dark .btn-download-app {
     background-color: var(--color-white);
     color: var(--color-dark);
 }
 
-body.dark-mode .btn-circle i{
+.dark .btn-circle i{
     color: var(--color-dark);
 }
 
-body.dark-mode .btn-download-app .small-text,
-body.dark-mode .btn-download-app .large-text {
+.dark .btn-download-app .small-text,
+.dark .btn-download-app .large-text {
     color: var(--color-dark) !important;
 }
 
-body.dark-mode .btn-download-app img {
+.dark .btn-download-app img {
     filter: brightness(0);
 }
 
-body.dark-mode .btn-download-app img[alt="Google play"] {
+.dark .btn-download-app img[alt="Google play"] {
     filter: none;
 }
 
-body.dark-mode .btn-download-app:hover {
+.dark .btn-download-app:hover {
     background-color: var(--color-primary);
     color: var(--color-white);
     text-decoration: none;
 }
 
-body.dark-mode .icon-wrapper {
+.dark .icon-wrapper {
     background-color: var(--color-gray700) !important;  
 }
 
-body.dark-mode #brands,
-body.dark-mode #page2, 
-body.dark-mode #page3, 
-body.dark-mode #page4, 
-body.dark-mode #page5, 
-body.dark-mode #page6 {
+.dark #brands,
+.dark #page2, 
+.dark #page3, 
+.dark #page4, 
+.dark #page5, 
+.dark #page6 {
     background-color: var(--color-dark);
     color: var(--color-white);
 }
 
-body.dark-mode #page4 .images img {
+.dark #page4 .images img {
     display: block;
     opacity: 1;
     visibility: visible;
@@ -1523,55 +1531,55 @@ body.dark-mode #page4 .images img {
     position: relative;
 }
 
-body.dark-mode #page4 {
+.dark #page4 {
     position: relative;
     z-index: 1;
 }
 
-body.dark-mode #page4 .images img {
+.dark #page4 .images img {
     position: relative;
     z-index: 100;
 }
 
-body.dark-mode .faq-section {
+.dark .faq-section {
     background-color: var(--color-dark);
     color: var(--color-white);
 }
 
-body.dark-mode .faq-section .question {
+.dark .faq-section .question {
     color: var(--color-white);
 }
 
-body.dark-mode .faq-section .answer {
+.dark .faq-section .answer {
     background-color: var(--color-gray800);
     color: var(--color-white);
 }
 
-body.dark-mode footer {
+.dark footer {
     background-color: var(--color-dark);
     color: var(--color-white);
 }
 
-body.dark-mode a {
+.dark a {
     color: var(--color-primary);
 }
 
-body.dark-mode a:hover {
+.dark a:hover {
     color: var(--color-white);
     text-decoration: underline;
 }
 
-body.dark-mode .cards {
+.dark .cards {
     background-color: var(--color-gray800);
     box-shadow: none;
 }
 
-body.dark-mode #page2 .images {
+.dark #page2 .images {
     display: block !important;
     position: relative !important;
 }
 
-body.dark-mode #page2 .images img {
+.dark #page2 .images img {
     display: block !important;
     filter: none !important;
     opacity: 1 !important;
@@ -1580,90 +1588,90 @@ body.dark-mode #page2 .images img {
 }
 
 
-body.dark-mode #page5 .cards {
-    background-color: var(--color-dar) !important; 
+.dark #page5 .cards {
+    background-color: var(--color-dark); 
 }
 
-body.dark-mode #page6 .box {
-    background-color: var(--color-dark) !important; 
+.dark #page6 .box {
+    background-color: var(--color-dark); 
     border-color: var(--color-gray700);
 }
 
-body.dark-mode #page6 .right-content {
+.dark #page6 .right-content {
     background-color: var(--color-dark);
 }
 
-body.dark-mode #page6 .faq-list {
+.dark #page6 .faq-list {
     background-color: #121212;
     padding: 0px;
 }
 
-body.dark-mode #page6 .faq-list .chevron, 
-body.dark-mode #page6 .faq-list .answer {
+.dark #page6 .faq-list .chevron, 
+.dark #page6 .faq-list .answer {
     background-color: #1A1A1A;
     border-color: var(--color-gray700);
     }
 
 
-body.dark-mode #page6 .contentbottom {
+.dark #page6 .contentbottom {
     background-color: #121212;
 }
 
-body.dark-mode .btn-submit:hover{
+.dark .btn-submit:hover{
     background-color: var(--color-gray600) !important;
     color: var(--color-white);
     text-decoration: none;
     cursor: pointer;
 }
 
-body.dark-mode #page7 {
-    background-color: var(--color-dark) !important; 
+.dark #page7 {
+    background-color: var(--color-dark); 
 }
 
-body.dark-mode #page7 .iconcircle {
+.dark #page7 .iconcircle {
     background-color: var(--color-gray700);
 }
 
-body.dark-mode #page7 .card {
+.dark #page7 .card {
     background-color: #121212;
     color: var(--color-white);
 }
 
-body.dark-mode #page7 .card input, 
-body.dark-mode #page7 .card select, 
-body.dark-mode #page7 .card textarea {
+.dark #page7 .card input, 
+.dark #page7 .card select, 
+.dark #page7 .card textarea {
     background-color: var(--color-gray600);
     color: var(--color-white);
     border: 1px solid var(--color-gray500);
 }
 
-body.dark-mode #page7 .card button {
+.dark #page7 .card button {
     background-color: var(--color-primary);
     color: var(--color-white);
 }
 
-body.dark-mode #page7 .card input::placeholder, 
-body.dark-mode #page7 .card textarea::placeholder {
+.dark #page7 .card input::placeholder, 
+.dark #page7 .card textarea::placeholder {
     color: var(--color-gray300);
 }
 
-body.dark-mode #page7 .card label, 
-body.dark-mode #page7 .card input, 
-body.dark-mode #page7 .card select, 
-body.dark-mode #page7 .card textarea {
+.dark #page7 .card label, 
+.dark #page7 .card input, 
+.dark #page7 .card select, 
+.dark #page7 .card textarea {
     color: var(--color-white);
 }
 
 
-body.dark-mode #page3,
-body.dark-mode #page5{
+.dark #page3,
+.dark #page5{
     background-color: #121212;
 
 }
 
-body.dark-mode #page7 .card .form-group input,
-body.dark-mode #page7 .card .form-group select,
-body.dark-mode #page7 .card .form-group textarea {
+.dark #page7 .card .form-group input,
+.dark #page7 .card .form-group select,
+.dark #page7 .card .form-group textarea {
     background-color: #2D2D2D;
 
 }

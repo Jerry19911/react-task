@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Subscribe from './Subscribe';
 
 const FaqSection = () => {
   const [faqItems, updateFaqItems] = useState([]);
@@ -9,7 +10,7 @@ const FaqSection = () => {
     const getFaqItems = async () => {
       try {
         const response = await fetch('https://win24-assignment.azurewebsites.net/api/faq');
-        if (!response.ok) throw new Error('Something went wrong, plaese try again.');
+        if (!response.ok) throw new Error('Something went wrong, please try again.');
         const data = await response.json();
         updateFaqItems(data);
       } catch (error) {
@@ -72,24 +73,8 @@ const FaqSection = () => {
           </ul>
         </div>
 
-        <div className="contentbottom">
-          <div className="contentbottomleft">
-            <div className="bellicon">
-              <i className="fa-sharp fa-solid fa-bell"></i>
-              <div className="circle"></div>
-            </div>
-            <h4 className="newsletter">Subscribe to our newsletter to stay informed about latest updates</h4>
-          </div>
-          <div className="enteremail">
-            <form action="" method="get">
-              <div className="input-wrapper">
-                <i className="fa-thin fa-envelope icon"></i>
-                <input type="email" placeholder="Your Email" />
-              </div>
-              <button className="btn-subscribe">Subscribe</button>
-            </form>
-          </div>
-        </div>
+        {/* Här läggs Subscribe-komponenten till */}
+        <Subscribe />
       </div>
     </section>
   );
