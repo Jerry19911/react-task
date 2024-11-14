@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 const Contacts = () => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
-  const [specialist, setSpecialist] = useState('');
   const [errors, setErrors] = useState({});
 
   const validateForm = () => {
@@ -17,10 +16,6 @@ const Contacts = () => {
       newErrors.email = 'Please enter a valid email address.';
     }
 
-    if (!specialist) {
-      newErrors.specialist = 'Please choose an option.';
-    }
-
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -30,7 +25,6 @@ const Contacts = () => {
     if (validateForm()) {      
       setFullName('');
       setEmail('');
-      setSpecialist('');
       setErrors({});
     }
   };
@@ -106,20 +100,13 @@ const Contacts = () => {
                 </div>
                 <div className="form-group">
                   <label htmlFor="specialist">Specialist</label>
-                  <select
-                    id="specialist"
-                    name="specialist"
-                    value={specialist}
-                    onChange={(e) => setSpecialist(e.target.value)}
-                    required
-                  >
+                  <select id="specialist" name="specialist" required>
                     <option value="">Select a specialist</option>
                     <option value="doctor">Doctor</option>
                     <option value="therapist">Therapist</option>
                     <option value="counselor">Counselor</option>
                     <option value="orthopedist">Orthopedist</option>
                   </select>
-                  {errors.specialist && <p className="error">{errors.specialist}</p>}
                 </div>
                 <button type="submit" className="btn-submit">
                   Make an appointment

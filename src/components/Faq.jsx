@@ -73,7 +73,6 @@ const FaqSection = () => {
           </ul>
         </div>
 
-        {/* Här läggs Subscribe-komponenten till */}
         <Subscribe />
       </div>
     </section>

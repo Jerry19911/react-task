@@ -1135,6 +1135,7 @@ min-height: 540px;
         margin-bottom: 2rem;
         
     }
+    
 
     .icon{
         position: absolute;
@@ -1183,6 +1184,11 @@ min-height: 540px;
         text-decoration: none;
         cursor: pointer;
     }
+
+    .error{
+        margin-left: 1rem;
+    }
+    
     
 }
 
